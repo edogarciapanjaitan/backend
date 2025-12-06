@@ -8,7 +8,5 @@ const eventRouter = Router();
 eventRouter.get("/", authMiddleware, getAllEventController);
 eventRouter.get("/:id", getEventByIdController);
 eventRouter.post("/", authMiddleware, roleGuard(["ADMIN"]), createEventController);
-// eventRouter.patch("/:id");
-// eventRouter.delete("/:id");
 
 export default eventRouter;

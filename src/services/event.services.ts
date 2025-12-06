@@ -55,6 +55,7 @@ export async function createEvent(
         location: string;
         schedule: string;
         cover_img: string;
+        date: string;
         slug: string;
     }
 ) {
@@ -65,6 +66,7 @@ export async function createEvent(
         const event = await prisma.event.create({
             data: {
                 ...params, 
+                
                 user_id: user.id,
             },
         });

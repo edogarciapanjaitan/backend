@@ -3,6 +3,8 @@ import { verify } from "jsonwebtoken";
 import { createCustomError } from "../utils/customError";
 import { SECRET_KEY } from "../config/env.config";
 
+
+
 export interface Token {
     email: string,
     name: string,
@@ -51,3 +53,4 @@ export function roleGuard(allowedRoles: string[]) {
         }
     };
 }
+

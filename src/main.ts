@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-
 import router from "./router";
 import errorMiddleware from "./middlewares/error.middleware";
+
 
 const app = express();
 
@@ -15,10 +15,17 @@ app.use(express.json());
 
 // Routes
 app.use("/api", router);
+app.use("/api/auth", router);
+
+app.get("/", (req, res) => {
+    res.send("API is running");
+});
 
 
 // Error Middleware
 app.use(errorMiddleware);
+
+
 
 
 app.listen(8000, () => {

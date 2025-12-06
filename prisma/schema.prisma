@@ -8,6 +8,7 @@ datasource db {
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
+
         
 model Event {
   id          Int  @id @default(autoincrement())
@@ -15,9 +16,11 @@ model Event {
   slug        String @unique
   description String
   location    String
-  schedule    String
   cover_img   String
+  date        DateTime @default(now())
+  createdAt   DateTime @default(now())
   user_id Int
+
 
   user User @relation(fields: [user_id], references: [id])
 
@@ -30,12 +33,15 @@ model User {
   name     String?
   password  String?
   referral_code String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
   role      Role    @default(USER)
 
-  event Event []
+  events Event []
 
   @@map("users")
 }   
+
 
 enum Role {
   ADMIN

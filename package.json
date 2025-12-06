@@ -4,40 +4,44 @@
   "description": "",
   "main": "./src/main.ts",
   "scripts": {
-    "bulid": "tsc",
+    "build": "tsc",
     "start": "npm run build && node dist/main.js",
-    "dev": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "prisma generate"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.1",
-    "@prisma/client": "^6.19.0",
     "bcrypt": "^6.0.0",
     "bcrypt-ts": "^7.1.0",
+    "bcryptjs": "^3.0.3",
     "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "helmet": "^8.1.0",
     "multer": "^2.0.2",
     "next-auth": "^5.0.0-beta.30",
-    "prisma": "^6.19.0",
     "react-icons": "^5.5.0",
     "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@prisma/client": "^6.19.0",
     "@types/bcrypt": "^6.0.0",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.5",
     "@types/helmet": "^0.0.48",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/multer": "^2.0.0",
-    "@types/node": "^24.10.0",
-    "jsonwebtoken": "^9.0.2",
-    "nodemon": "^3.1.10",
+    "@types/node": "^24.10.1",
+    "@types/nodemon": "^1.19.6",
+    "dotenv": "^17.2.3",
+    "jsonwebtoken": "^9.0.3",
+    "nodemon": "^3.1.11",
+    "prisma": "^6.19.0",
     "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   }
 }
