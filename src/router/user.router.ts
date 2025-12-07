@@ -4,7 +4,7 @@ import { authMiddleware, roleGuard } from "../middlewares/auth.middleware";
 
 const userRouter = Router();
 
-// Hanya admin yang bisa akses endpoint ini
+// Admin routes
 userRouter.get("/", authMiddleware, roleGuard(["ADMIN"]), getAllUsersController);
 userRouter.patch("/:userId/role", authMiddleware, roleGuard(["ADMIN"]), updateRoleController);
 
