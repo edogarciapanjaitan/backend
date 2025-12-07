@@ -24,7 +24,7 @@ async function getAllEventController(req, res, next) {
 async function createEventController(req, res, next) {
     try {
         const user = req.user;
-        const { title, description, location, schedule, cover_img } = req.body;
+        const { title, description, location, schedule, cover_img, date } = req.body;
         const slug = title
             .toLowerCase()
             .replace(/ /g, "-")
@@ -35,6 +35,7 @@ async function createEventController(req, res, next) {
             location,
             schedule,
             cover_img,
+            date,
             slug,
         });
         res.json({

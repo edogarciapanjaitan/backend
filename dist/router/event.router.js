@@ -7,6 +7,4 @@ const eventRouter = (0, express_1.Router)();
 eventRouter.get("/", auth_middleware_1.authMiddleware, event_controller_1.getAllEventController);
 eventRouter.get("/:id", event_controller_1.getEventByIdController);
 eventRouter.post("/", auth_middleware_1.authMiddleware, (0, auth_middleware_1.roleGuard)(["ADMIN"]), event_controller_1.createEventController);
-// eventRouter.patch("/:id");
-// eventRouter.delete("/:id");
 exports.default = eventRouter;

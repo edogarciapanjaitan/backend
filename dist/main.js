@@ -15,6 +15,10 @@ app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 // Routes
 app.use("/api", router_1.default);
+app.use("/api/auth", router_1.default);
+app.get("/", (req, res) => {
+    res.send("API is running");
+});
 // Error Middleware
 app.use(error_middleware_1.default);
 app.listen(8000, () => {
